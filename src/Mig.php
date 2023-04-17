@@ -1,6 +1,8 @@
 <?php
 namespace gaucho;
 
+use \PDO;
+
 class Mig
 {
     public $conn;

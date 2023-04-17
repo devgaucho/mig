@@ -13,8 +13,9 @@ composer require gaucho/mig
 use gaucho\global;
 use gaucho\Mig;
 
-$Mig=new Mig();
+$pdo=db()->pdo();
 $tableDirectory=global\root().'/table';
 $dbType='mysql';
-$Mig->mig($pdo,$tableDirectory,$dbType);
+$Mig=new Mig($pdo,$tableDirectory,$dbType);
+$Mig->mig();
 ```
