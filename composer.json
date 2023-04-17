@@ -1,0 +1,16 @@
+{
+    "name": "gaucho/mig",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "gaucho\\": "src/"
+        } 
+    },
+    "authors": [
+        {
+            "name": "gaucho.dev",
+            "email": "119246170+devgaucho@users.noreply.github.com"
+        }
+    ]
+}
