@@ -171,7 +171,6 @@ class Mig
 
     public function mig()
     {
-        system("clear");
         $migrations = $this->getMigrations();
         $migrationsList = array_keys($migrations);
         $tables = $this->getTables();
