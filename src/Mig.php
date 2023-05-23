@@ -48,6 +48,9 @@ class Mig
 
     public function createTable($tableName, $columnNames)
     {
+	if(!in_array('id',$columnNames){
+		$columnNames[]='id';
+	}
         $sql = 'CREATE TABLE IF NOT EXISTS `' . $tableName . '` (' . PHP_EOL;
         switch ($this->dbType) {
             case 'mysql':
