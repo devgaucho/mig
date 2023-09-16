@@ -89,24 +89,28 @@ class Mig
     {
         switch ($this->dbType) {
             case 'mysql':
-            $sql = 'ALTER TABLE `' . $tableName . '` DROP `' . $columnName . '`;';
-            return $this->query($sql);
-            break;
+		$sql = 'ALTER TABLE `' . $tableName . '` DROP `' . $columnName . '`;';
+		return $this->query($sql);
+		break;
             case 'sqlite':
-            $columnNames = $this->getTableColumns($tableName);
-            $columnNames = array_flip($columnNames);
-            unset($columnNames[$columnName]);
-            $columnNames = array_flip($columnNames);
-            $tmpTableName = 'mig_tmp_table';
-            $this->createTable($tmpTableName, $columnNames);
-            $columnNamesInline = '`' . implode('`,`', $columnNames) . '`';
-            $sql = 'INSERT INTO ' . $tmpTableName . ' SELECT ';
-            $sql .= $columnNamesInline . ' FROM `' . $tableName . '`;';
-            $this->query($sql);
-            $this->dropTable($tableName);
-            $this->renameTable($tmpTableName, $tableName);
-            return true;
-            break;
+		// pega as colunas da tabela antiga
+		$columnNames = $this->getTableColumns($tableName);
+		$columnNames = array_flip($columnNames);
+		// remove a coluna a ser deletada
+		unset($columnNames[$columnName]);
+		$columnNames = array_flip($columnNames);
+		// cria a tabela temporária
+		$tmpTableName = 'mig_tmp_table';
+		$this->dropTable($tmpTableName);
+		$this->createTable($tmpTableName, $columnNames);
+		$columnNamesInline = '`' . implode('`,`', $columnNames) . '`';
+		$sql = 'INSERT INTO ' . $tmpTableName . ' SELECT ';
+		$sql .= $columnNamesInline . ' FROM `' . $tableName . '`;';
+		$this->query($sql);
+		$this->dropTable($tableName);
+		$this->renameTable($tmpTableName, $tableName);
+		return true;
+		break;
         }
     }
 
