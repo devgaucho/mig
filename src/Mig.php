@@ -97,7 +97,6 @@ class Mig
             unset($columnNames[$columnName]);
             $columnNames = array_flip($columnNames);
             $tmpTableName = 'mig_tmp_table';
-            $this->dropTable($tmpTableName);
             $this->createTable($tmpTableName, $columnNames);
             $columnNamesInline = '`' . implode('`,`', $columnNames) . '`';
             $sql = 'INSERT INTO ' . $tmpTableName . ' SELECT ';
@@ -210,7 +209,12 @@ class Mig
 
     public function query($sql)
     {
-        return $this->conn->query($sql);
+	try{
+	        return $this->conn->query($sql);
+	}catch(Exception $e){
+		print 'erro ao executar a seguinte query: '.PHP_EOL.$sql.PHP_EOL;
+		die($e->getMessage()));
+	}
     }
 
     public function renameTable($oldTableName, $newTableName)
