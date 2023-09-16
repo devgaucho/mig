@@ -213,7 +213,7 @@ class Mig
 	        return $this->conn->query($sql);
 	}catch(Exception $e){
 		print 'erro ao executar a seguinte query: '.PHP_EOL.$sql.PHP_EOL;
-		die($e->getMessage()));
+		die($e->getMessage());
 	}
     }
 
