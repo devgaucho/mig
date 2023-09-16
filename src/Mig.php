@@ -2,6 +2,7 @@
 namespace gaucho;
 
 use \PDO;
+use \PDOException;
 
 class Mig
 {
@@ -211,7 +212,7 @@ class Mig
     {
 	try{
 	        return $this->conn->query($sql);
-	}catch(Exception $e){
+	}catch(PDOException $e){
 		print 'erro ao executar a seguinte query: '.PHP_EOL.$sql.PHP_EOL;
 		die($e->getMessage());
 	}
