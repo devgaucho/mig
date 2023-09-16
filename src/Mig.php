@@ -97,6 +97,7 @@ class Mig
             unset($columnNames[$columnName]);
             $columnNames = array_flip($columnNames);
             $tmpTableName = 'mig_tmp_table';
+            $this->dropTable($tmpTableName);
             $this->createTable($tmpTableName, $columnNames);
             $columnNamesInline = '`' . implode('`,`', $columnNames) . '`';
             $sql = 'INSERT INTO ' . $tmpTableName . ' SELECT ';
