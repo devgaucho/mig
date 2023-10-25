@@ -1,6 +1,6 @@
 {
     "name": "gaucho/mig",
-    "description": "Sistema básico de migrations",
+    "description": "Sistema básico de migrations em plain text",
     "type": "library",
     "license": "MIT",
     "autoload": {

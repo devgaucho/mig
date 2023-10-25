@@ -1,5 +1,7 @@
 # mig
 
+Sistema básico de migrations em plain text
+
 ## Instalação
 
 ```bash
