@@ -12,7 +12,11 @@ composer require gaucho/mig
 
 ### Formato das migrations:
 
-"table/users" ou "table/users.txt" (a extensão é opcional)
+Cada tabela é representada através de um arquivo TXT com as colunas.
+
+#### Exemplo:
+
+Arquivo "table/users" ou "table/users.txt" (a extensão é opcional)
 
 ```
 id
