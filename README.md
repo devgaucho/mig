@@ -27,13 +27,13 @@ Os prefixos numéricos opcionais são convertidos para VARCHAR
 ### Para apenas um diretório:
 
 ```php
-$tableDirectory=__DIR__.'/table';
+$table_dir=__DIR__.'/table';
 ```
 
 ### Para vários diretórios:
 
 ```php
-$tableDirectory=[
+$table_dir=[
 __DIR__.'/dir1',
 __DIR__.'/dir2'
 ];
@@ -46,7 +46,7 @@ __DIR__.'/dir2'
 use gaucho\Mig;
 
 $pdo=/* instância do pdo */;
-$dbType='mysql';//sqlite
-$Mig=new Mig($pdo,$tableDirectory,$dbType);
-$Mig->mig();
+$db_type='mysql';//sqlite
+$gaucho_mig=new Mig($pdo,$table_dir,$db_type);
+$gaucho_mig->mig();
 ```
