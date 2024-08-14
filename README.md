@@ -10,13 +10,6 @@ composer require gaucho/mig
 
 ## Utilização
 
-```php
-use gaucho\Mig;
-
-$pdo=/* instância do pdo */;
-$dbType='mysql';//sqlite
-```
-
 ### Formato das migrations:
 
 "table/users" ou "table/users.txt" (a extensão é opcional)
@@ -50,6 +43,10 @@ __DIR__.'/dir2'
 ### Corre Forrest! Corre! 🏃‍♂️
 
 ```php
+use gaucho\Mig;
+
+$pdo=/* instância do pdo */;
+$dbType='mysql';//sqlite
 $Mig=new Mig($pdo,$tableDirectory,$dbType);
 $Mig->mig();
 ```
