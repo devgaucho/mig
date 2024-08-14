@@ -14,8 +14,22 @@ composer require gaucho/mig
 use gaucho\Mig;
 
 $pdo=/* instância do pdo */;
-$dbType='mysql';
+$dbType='mysql';//sqlite
 ```
+
+### Formato das migrations:
+
+"table/users" ou "table/users.txt" (a extensão é opcional)
+
+```
+id
+name_32
+email_32
+```
+
+Colunas "id" são automaticamente convertidas para AUTO_INCREMENT
+
+Os prefixos numéricos opcionais são convertidos para VARCHAR
 
 ### Para apenas um diretório:
 
@@ -32,7 +46,8 @@ __DIR__.'/dir2'
 ];
 ```
 
-### Rodando, rodando:
+
+### Corre Forrest! Corre! 🏃‍♂️
 
 ```php
 $Mig=new Mig($pdo,$tableDirectory,$dbType);
