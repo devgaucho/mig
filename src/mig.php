@@ -351,7 +351,7 @@ class mig{
 		try {
 			return $this->conn->query($sql);
 		} catch (PDOException $e){
-			$msg.='erro ao executar a seguinte query: ';
+			$msg='erro ao executar a seguinte query: ';
 			$msg.=PHP_EOL.$sql.PHP_EOL;
 			$this->debug($msg);
 			die($e->getMessage().PHP_EOL);
