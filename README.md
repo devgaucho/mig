@@ -47,10 +47,10 @@ __DIR__.'/dir2'
 ### Corre Forrest! Corre! 🏃‍♂️
 
 ```php
-use gaucho\Mig;
+use gaucho\mig;
 
 $pdo=/* instância do pdo */;
 $db_type='mysql';//sqlite
-$gaucho_mig=new Mig($pdo,$table_dir,$db_type);
+$gaucho_mig=new mig($pdo,$table_dir,$db_type);
 $gaucho_mig->mig();
 ```

@@ -1,5 +1,6 @@
 <?php
-class Mig{
+namespace gaucho;
+class mig{
 	var $conn;
 	var $tableDirectory;
 	var $dbType;
