@@ -51,6 +51,6 @@ use gaucho\mig;
 
 $pdo=/* instância do pdo */;
 $db_type='mysql';//sqlite
-$gaucho_mig=new mig($pdo,$table_dir,$db_type);
-$gaucho_mig->mig();
+$mig=new mig($pdo,$table_dir,$db_type);
+$mig->mig();
 ```
