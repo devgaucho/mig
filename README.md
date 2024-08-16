@@ -16,7 +16,7 @@ Cada tabela é representada através de um arquivo TXT com as colunas.
 
 #### Exemplo:
 
-Arquivo "table/users" ou "table/users.txt" (a extensão é opcional)
+Arquivo plant text "table/users"
 
 ```
 id
