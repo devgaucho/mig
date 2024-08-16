@@ -6,7 +6,7 @@ class mig{
 	var $dbType;
 	var $debug;	
 	var $tamanhos;
-	function __construct($conn,$tableDirectory,$dbType,$debug){
+	function __construct($conn,$tableDirectory,$dbType,$debug=1){
 		$this->conn=$conn;
 		$this->tableDirectory=$tableDirectory;
 		$this->dbType=$dbType;
